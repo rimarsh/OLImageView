@@ -198,7 +198,7 @@ inline static BOOL isRetinaFilePath(NSString *path)
             [strongSelf.images replaceObjectAtIndex:i withObject:[UIImage imageWithCGImage:frameImageRef scale:scale orientation:UIImageOrientationUp]];
             CFRelease(frameImageRef);
         });
-        NSLog(@"Fully decoded %d frames: %f", [weakSelf.images count], CFAbsoluteTimeGetCurrent()-start);
+        NSLog(@"Fully decoded %lu frames: %f", (unsigned long)[weakSelf.images count], CFAbsoluteTimeGetCurrent()-start);
         CFRelease(imageSource);
     });
     
